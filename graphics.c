@@ -33,6 +33,10 @@ int initGfx(int h, int w) {
         printf("grid size must be even\n");
         return -1;
     }
+    if(w * h > 256 * 2) {
+        printf("grid size must not be greater than 512\n");
+        return -1;
+    }
 
     // ncurses setup
     initscr();
